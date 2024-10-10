@@ -11,7 +11,7 @@ export const DiscoButton = () => {
         style={{ backgroundColor: color }}
         className="disco-button"
         onClick={() => {
-          setColor(colors[Math.floor(Math.random() * colors.length)]);
+          setColor(colors[count % colors.length]);
           setCount(count + 1);
         }}
       >
