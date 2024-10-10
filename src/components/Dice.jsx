@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export const Dice = () => {
-  const randomDiceNumber = Math.floor(Math.random() * 6) + 1;
-  const [dice, setDice] = useState(randomDiceNumber);
+  const [dice, setDice] = useState(Math.floor(Math.random() * 6) + 1);
 
-  const randomDice = () => {
+  const rollDice = () => {
+    const randomDiceNumber = Math.floor(Math.random() * 6) + 1;
     setDice(0);
     setTimeout(() => {
       setDice(randomDiceNumber);
@@ -12,7 +12,7 @@ export const Dice = () => {
   };
 
   return (
-    <div onClick={randomDice}>
+    <div onClick={rollDice}>
       <img
         className="dice"
         src={`/src/assets/images/dice${dice}.png`}
